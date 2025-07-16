@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const page = () => {
   return (
@@ -59,9 +60,9 @@ const page = () => {
           {/* Final Note */}
           <div className="mt-10 text-center">
             <p className="text-lg mb-4">Still have questions?</p>
-            <a href="/whocares.webp" className="bg-[#FFBF78] text-[#4B352A] px-6 py-3 rounded-full font-bold hover:bg-[#f5a447] transition duration-200">
+            <Link href="/whocares.webp" className="bg-[#FFBF78] text-[#4B352A] px-6 py-3 rounded-full font-bold hover:bg-[#f5a447] transition duration-200">
               ✉️ Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </main>

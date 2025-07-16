@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const About = () => {
   return (
@@ -32,9 +33,9 @@ const About = () => {
     </p>
 
     <div className="mt-10 text-center">
-      <a href="/generate" className="bg-[#FFBF78] text-[#4B352A] px-6 py-3 rounded-full font-bold hover:bg-[#f5a447] transition duration-200">
+      <Link href="/generate" className="bg-[#FFBF78] text-[#4B352A] px-6 py-3 rounded-full font-bold hover:bg-[#f5a447] transition duration-200">
         🚀 Start Creating Your Bitlink Now
-      </a>
+      </Link>
     </div>
     </ div>
   </main>
