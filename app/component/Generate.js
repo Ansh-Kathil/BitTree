@@ -71,8 +71,7 @@ const Generate = () => {
     console.error("Submit error:", error);
     toast.error("Failed to submit. Please try again.");
   }
-
-
+  
     }
 
     return (<><ToastContainer
