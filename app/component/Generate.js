@@ -54,17 +54,23 @@ const Generate = () => {
             redirect: "follow"
         };
 
-        const r = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/generate`, requestOptions)
-        const result = await r.json()
-        if (result.success) {
-            toast.success(result.message)
-            setlinks([{ link: "", linktext: "" }])
-            setpic("")
-            sethandle("")
-        }
-        else {
-            toast.error(result.message)
-        }
+        try {
+    const r = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/generate`, requestOptions);
+    const text = await r.text(); // safer than .json()
+    const result = text ? JSON.parse(text) : {};
+
+    if (result.success) {
+      toast.success(result.message || "Bitlink created!");
+      setlinks([{ link: "", linktext: "" }]);
+      setpic("");
+      sethandle("");
+    } else {
+      toast.error(result.message || "Something went wrong");
+    }
+  } catch (error) {
+    console.error("Submit error:", error);
+    toast.error("Failed to submit. Please try again.");
+  }
 
 
     }
