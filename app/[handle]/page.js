@@ -29,7 +29,7 @@ export default async function Page({ params }) {
 
                     <img className="rounded-full" width={100} src={items.pic} alt="" />
                     <span className="font-bold text-xl">@{items.handle}</span>
-                    <span className="desc w-80 text-center ">{items.desc}</span>
+                    <span className="desc w-150 text-center ">{items.desc}</span>
                     <div className="links">
                         {items.links.map((item, index) => {
                             return <Link key={index} href={item.link} target="_blank"><div className="py-4 flex justify-center shadow-lg px-2 rounded-md bg-[#171515e7] hover:bg-transparent border hover:border-gray-700 border-amber-100 my-3 min-w-96" >
