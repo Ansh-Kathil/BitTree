@@ -77,7 +77,7 @@ const Stats = async () => {
         <div className="bg-[#B2CD9C] border p-8 rounded-lg text-center max-w-md">
           <h2 className="font-bold text-2xl mb-4">Stats Temporarily Unavailable</h2>
           <p className="mb-4">
-            We're experiencing some technical difficulties connecting to our database. Please try again later.
+            We are experiencing some technical difficulties connecting to our database. Please try again later.
           </p>
           <Link href="/" className="font-bold text-blue-900 hover:underline">
             Return to Home
