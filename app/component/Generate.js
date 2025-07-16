@@ -54,7 +54,7 @@ const Generate = () => {
             redirect: "follow"
         };
 
-        const r = await fetch("http://localhost:3000/api/generate", requestOptions)
+        const r = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/generate`, requestOptions)
         const result = await r.json()
         if (result.success) {
             toast.success(result.message)
