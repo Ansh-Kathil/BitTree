@@ -55,7 +55,7 @@ const Generate = () => {
         };
 
         try {
-    const r = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/generate`, requestOptions);
+    const r = await fetch('/api/generate', requestOptions);
     const text = await r.text(); // safer than .json()
     const result = text ? JSON.parse(text) : {};
 
