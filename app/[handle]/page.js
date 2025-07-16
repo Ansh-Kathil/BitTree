@@ -40,7 +40,7 @@ export default async function Page({ params }) {
                         })}
                     </div>
                 </div>
-                <Link href={'/'}><div className="absolute bg-gray-800 p-3 rounded-lg text-white bottom-10 right-10 gap-2 flex justify-center items-center">
+                <Link href={'/'}><div className="fixed bg-gray-800 p-3 rounded-lg text-white bottom-10 right-10 gap-2 flex justify-center items-center">
                     <span>Create your own handle</span>
                     <img width="20" className="invert" height="20" src="https://img.icons8.com/ios-filled/100/circled-up-right.png" alt="circled-down-left"/>
                 </div>
