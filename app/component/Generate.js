@@ -11,6 +11,7 @@ const Generate = () => {
     const [desc, setdesc] = useState("")
     const [handle, sethandle] = useState("")
     const [pic, setpic] = useState('')
+    const [isloading, setisloading] = useState(false);
     const handlechange = (index, link, linktext) => {
         setlinks((initiallinks) => {
             return initiallinks.map((item, i) => {
@@ -36,6 +37,7 @@ const Generate = () => {
 
 
     const submitlink = async (text, link) => {
+        setisloading(true);
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -64,12 +66,15 @@ const Generate = () => {
       setlinks([{ link: "", linktext: "" }]);
       setpic("");
       sethandle("");
+      setisloading(false);
     } else {
       toast.error(result.message || "Something went wrong");
+      setisloading(false);
     }
   } catch (error) {
     console.error("Submit error:", error);
     toast.error("Failed to submit. Please try again.");
+    setisloading(false);
   }
   
     }
@@ -114,7 +119,7 @@ const Generate = () => {
                         <div className="mx-4 flex flex-col">
                             <input value={pic || ""} onChange={e => setpic(e.target.value)} className='my-2  mx-2 px-4 bg-white py-2 text-[#4B352A] focus:outline-[#688ed4] rounded-full ' type="text" placeholder='Enter link of your pic' />
                             <input value={desc || ""} onChange={e => setdesc(e.target.value)} className='my-2  mx-2 px-4 bg-white py-2 text-[#4B352A] focus:outline-[#688ed4] rounded-full ' type="text" placeholder='Enter Your description' />
-                            <button disabled={links[0].link == "" || pic == "" || handle == "" || links[0].linktext == ""} onClick={() => { submitlink() }} className='py-2 my-5 disabled:bg-slate-500 w-fit px-5 mx-2 rounded-full bg-slate-900 text-white font-bold  '>Create your Bitlink</button>
+                            <button disabled={links[0].link == "" || pic == "" || handle == "" || links[0].linktext == ""} onClick={() => { submitlink() }} className='py-2 my-5 disabled:bg-slate-500 w-fit px-5 mx-2 rounded-full bg-slate-900 text-white font-bold  '>{!isloading ?  "Create your Bitlink"  : "Loading..." } </button>
                         </div>
 
                     </div>
