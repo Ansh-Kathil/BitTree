@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌐 BitLinks
 
-## Getting Started
+BitLinks is a simple and customizable **Linktree alternative** built with **Next.js**.  
+Create a single bio link to showcase all your important links — social profiles, portfolios, projects, and more — beautifully and efficiently.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=nextdotjs)
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Vercel Deploy](https://img.shields.io/badge/deploy-Vercel-black?logo=vercel)
+
+---
+
+## 🚀 Features
+
+- 🔗 Create a personalized bio link page  
+- 🖼️ Add profile picture, name, bio, and multiple links  
+- 🎨 Minimal and responsive UI  
+- ⚡ Built with **Next.js App Router**  
+- 💅 Styled using **Tailwind CSS**  
+- 🌍 Easy deployment on **Vercel**
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js 14, React 18  
+- **Styling:** Tailwind CSS  
+- **Fonts:** [Geist Font](https://vercel.com/font) (by Vercel)  
+- **Deployment:** Vercel  
+
+---
+
+## 💻 Getting Started
+
+Clone this repository and run the development server:
 
 ```bash
+# Clone the repo
+git clone https://github.com/yourusername/bitlinks.git
+
+# Navigate to the project
+cd bitlinks
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+# Start the dev server
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Open http://localhost:3000 in your browser to view the app.
+## 🧩 Project Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+bitlinks/
+├── app/
+│   ├── page.js        # Main page
+│   ├── layout.js      # Root layout
+│   └── components/    # UI components
+├── public/            # Static assets
+├── styles/            # Global styles
+├── package.json
+└── README.md
+```
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+⚙️ Environment Variables 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a .env.local file and add your variables like this:
+```
+MONGODB_URI=mongodb://example.com
+```
+---
 
-## Learn More
+## 🧑‍💻 Author
 
-To learn more about Next.js, take a look at the following resources:
+BitLinks is developed and maintained by Ansh kathil
+.
+Feel free to ⭐ the repo if you find it useful!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+“One link to rule them all — BitLinks 💫”
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
