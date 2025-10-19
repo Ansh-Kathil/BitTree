@@ -17,8 +17,8 @@ const Navbar = () => {
     
  
     return (<> {showNavbar && <nav className='bg-white justify-between w-[80vw] flex fixed  top-10 right-[10vw] rounded-full px-7 py-5'>
-        <div className="logo flex gap-10 items-center">
-            <Link href={"/"}><img className='h-6' src="https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/66634daccb34e6d65a41c76d_download.svg" alt="" />
+        <div className="logo flex gap-8  items-center">
+            <Link href={"/"}><img className='h-6 object-contain' src="/logooo.png" alt="" />
             </Link>
             <ul className='flex gap-10 '>
                 <Link href="/stats" ><li>Our Stats  </li></Link>
