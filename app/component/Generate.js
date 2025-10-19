@@ -91,11 +91,11 @@ const Generate = () => {
         pauseOnHover
         theme="light"
     />
-        <div className='flex w-full justify-center items-center bg-slate-200 min-h-screen'>
-            <div className='flex relative top-15 bg-gray-100 justify-center rounded-lg items-center p-10 flex-col text-[#4B352A]'>
-                <h1 className='font-bold mb-7 text-4xl'>Create Your BitLink</h1>
-                <div className='flex items-center p-3 gap-10'>
-                    <div className=' w-1/2 flex flex-col gap-3 m-3 p-3'>
+        <div className='flex w-full justify-center items-center bg-[#F0F2BD]  min-h-screen'>
+            <div className='flex bg-[#d1cbcc] relative top-15 justify-center rounded-lg items-center p-5 flex-col text-[#4B352A]'>
+                <h1 className='font-bold mb-5 text-4xl'>Create Your BitLink</h1>
+                <div className='flex items-center gap-10'>
+                    <div className=' w-1/2 flex flex-col gap-3 p-3'>
                         <div className="item flex flex-col ">
                             <h2 className='font-semibold text-2xl'>Step 1: Enter your Handle</h2>
                             <div className="ml-20">
