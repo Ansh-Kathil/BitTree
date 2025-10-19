@@ -3,6 +3,7 @@ import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Minus } from 'lucide-react';
 
 const Generate = () => {
 
@@ -33,7 +34,12 @@ const Generate = () => {
     const addLink = () => {
         setlinks(links.concat([{ link: "", linktext: "" }]))
     }
-
+    const removelink = () => {
+        if(links.length>1){
+            const newlinks = links.slice(0,-1);
+            setlinks(newlinks);
+        }
+    }
 
 
     const submitlink = async (text, link) => {
@@ -92,8 +98,8 @@ const Generate = () => {
         theme="light"
     />
         <div className='flex w-full justify-center items-center bg-[#F0F2BD]  min-h-screen'>
-            <div className='flex bg-[#d1cbcc] relative top-15 justify-center rounded-lg items-center p-5 flex-col text-[#4B352A]'>
-                <h1 className='font-bold mb-5 text-4xl'>Create Your BitLink</h1>
+            <div className='flex bg-[#cecca65d] relative top-15 justify-center rounded-lg items-center p-5 flex-col text-[#4B352A]'>
+                <h1 className='font-bold mb-5 text-4xl'>Create Your BitTree</h1>
                 <div className='flex items-center gap-10'>
                     <div className=' w-1/2 flex flex-col gap-3 p-3'>
                         <div className="item flex flex-col ">
@@ -113,7 +119,7 @@ const Generate = () => {
                     <hr className='  bg-white' />
                     <div className=' w-1/2 flex flex-col gap-3 m-3 p-3'>
                             <h2 className='font-semibold text-2xl mb-2'>Step 3: Add your Links</h2>
-                        <div className="item flex flex-col overflow-y-scroll h-45 rounded-lg p-2">
+                        <div className={` ${links.length> 2 ? "overflow-y-scroll": ''} bg-[#eeeff07d]  custom-scroll item flex flex-col  h-45 rounded-lg p-2`}>
                             {links.map((item, index) => (
                                 <div key={index} className="flex mx-2">
                                     <input
@@ -133,13 +139,16 @@ const Generate = () => {
                                 </div>
                             ))}
                         </div>
-                        <button onClick={addLink} className='py-2 px-5  rounded-full bg-slate-900 w-1/3 justify-center  text-white font-bold'>
+                        <div onClick={removelink} className='flex items-center justify-center hover:bg-slate-500 bg-slate-400 w-10 rounded-lg self-end mr-5 '>
+                        <Minus />
+                        </div>
+                        <button onClick={addLink} className='py-2 px-5 select-none rounded-full bg-slate-900 w-1/3 justify-center  text-white font-bold'>
                             +Add Link
                         </button>
                     </div>
 
                 </div>
-                <button disabled={links[0].link == "" || pic == "" || handle == "" || links[0].linktext == ""} onClick={() => { submitlink() }} className='py-2 mt-10 my-5 disabled:bg-slate-500 w-fit px-5 mx-2 rounded-full bg-slate-900 text-white font-bold  '>{!isloading ? "Create your Bitlink" : "Loading..."} </button>
+                <button disabled={ links.some(link => link.link === "" || link.linktext === "") || pic == "" || handle == "" } onClick={() => { submitlink() }} className='py-2 select-none mt-10 my-5 disabled:bg-slate-500 w-[190px] px-5 mx-2 rounded-full bg-slate-900 text-white font-bold  '>{!isloading ? "Create your Bitlink" : "Loading..."} </button>
             </div>
         </div>
     </>

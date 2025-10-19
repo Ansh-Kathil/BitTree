@@ -5,7 +5,7 @@ const About = () => {
   return (
 <div>
   <main className="bg-[#F0F2BD]   min-h-screen text-[#7B4019] px-10 py-16 ">
-    <div className='mt-[10vh]'>
+    <div className='mt-[15vh]'>
 
     <h1 className="text-4xl font-bold mb-6">About Us</h1>
 

@@ -45,6 +45,9 @@ export default async function Page({ params }) {
                     <img width="20" className="invert" height="20" src="https://img.icons8.com/ios-filled/100/circled-up-right.png" alt="circled-down-left"/>
                 </div>
                 </Link>
+                <div className="absolute w-50 bottom-3 left-3">
+                    <img src="/logoo.png" alt="" />
+                </div>
             </>
         }
     </div>
