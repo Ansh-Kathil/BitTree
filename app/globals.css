@@ -1,1 +1,23 @@
 @import "tailwindcss";
+/* Hide scrollbar but allow scrolling */
+
+
+/* Hide the clear (x) icon in search inputs */
+
+
+@layer utilities {
+  /* Hide the default 'x' (clear) icon in search inputs */
+  .no-clear::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Optional: also hide search icon if your browser adds one */
+  .no-clear::-webkit-search-decoration,
+  .no-clear::-webkit-search-results-button,
+  .no-clear::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+

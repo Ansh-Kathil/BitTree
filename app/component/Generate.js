@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 const Generate = () => {
@@ -57,26 +57,26 @@ const Generate = () => {
         };
 
         try {
-    const r = await fetch('/api/generate', requestOptions);
-    const text = await r.text(); // safer than .json()
-    const result = text ? JSON.parse(text) : {};
+            const r = await fetch('/api/generate', requestOptions);
+            const text = await r.text(); // safer than .json()
+            const result = text ? JSON.parse(text) : {};
 
-    if (result.success) {
-      toast.success(result.message || "Bitlink created!");
-      setlinks([{ link: "", linktext: "" }]);
-      setpic("");
-      sethandle("");
-      setisloading(false);
-    } else {
-      toast.error(result.message || "Something went wrong");
-      setisloading(false);
-    }
-  } catch (error) {
-    console.error("Submit error:", error);
-    toast.error("Failed to submit. Please try again.");
-    setisloading(false);
-  }
-  
+            if (result.success) {
+                toast.success(result.message || "Bitlink created!");
+                setlinks([{ link: "", linktext: "" }]);
+                setpic("");
+                sethandle("");
+                setisloading(false);
+            } else {
+                toast.error(result.message || "Something went wrong");
+                setisloading(false);
+            }
+        } catch (error) {
+            console.error("Submit error:", error);
+            toast.error("Failed to submit. Please try again.");
+            setisloading(false);
+        }
+
     }
 
     return (<><ToastContainer
@@ -91,47 +91,56 @@ const Generate = () => {
         pauseOnHover
         theme="light"
     />
-        <div className='bg-[#4B352A] min-h-screen grid grid-cols-2'>
-            <div className='col1 flex justify-center items-center flex-col text-[#F0F2BD]'>
-                <div className='flex flex-col gap-5 my-8 mt-35 '>
-                    <h1 className='font-bold text-4xl'>Create Your Bittree</h1>
-                    <div className="item">
-
-                        <h2 className='font-semibold text-2xl'>Step 1: Claim your Handle</h2>
-                        <div className="mx-4">
-                            <input value={handle || ""} onChange={e => sethandle(e.target.value)} className='px-4 my-2 bg-white py-2 text-[#4B352A] focus:outline-[#688ed4] rounded-full ' type="text" placeholder='Choose a handle' />
-                        </div>
-                    </div>
-                    <div className="item">
-
-                        <h2 className='font-semibold text-2xl'>Step 2: Add your Links</h2>
-                        {links && links.map((item, index) => {
-                            return <div key={index} className="mx-4">
-
-                                <input value={item.linktext || ""} onChange={e => handlechange(index, item.link, e.target.value)} className='my-2 mx-2 px-4 bg-white text-[#4B352A] py-2 focus:outline-[#688ed4] rounded-full ' type="text" placeholder='Enter link text ' />
-                                <input value={item.link || ""} onChange={e => handlechange(index, e.target.value, item.linktext)} className='my-2 mx-2 px-4 bg-white text-[#4B352A] py-2 focus:outline-[#688ed4] rounded-full ' type="text" placeholder='Enter link ' />
+        <div className='flex w-full justify-center items-center bg-slate-200 min-h-screen'>
+            <div className='flex relative top-15 bg-gray-100 justify-center rounded-lg items-center p-10 flex-col text-[#4B352A]'>
+                <h1 className='font-bold mb-7 text-4xl'>Create Your BitLink</h1>
+                <div className='flex items-center p-3 gap-10'>
+                    <div className=' w-1/2 flex flex-col gap-3 m-3 p-3'>
+                        <div className="item flex flex-col ">
+                            <h2 className='font-semibold text-2xl'>Step 1: Enter your Handle</h2>
+                            <div className="ml-20">
+                                <input value={handle || ""} onChange={e => sethandle(e.target.value)} className='px-4 my-2 bg-white py-2 text-[#4B352A] focus:outline-[#688ed4] rounded-lg  ' type="text" placeholder='Choose a handle' />
                             </div>
-                        })}
-                        <button onClick={() => addLink()} className='py-2 px-5 mx-2 rounded-full bg-slate-900 text-white font-bold  '> +Add Link</button>
-                    </div>
-                    <div className="item">
-                        <h2 className='font-semibold text-2xl'>Step 3: Add Picture and Description</h2>
-                        <div className="mx-4 flex flex-col">
-                            <input value={pic || ""} onChange={e => setpic(e.target.value)} className='my-2  mx-2 px-4 bg-white py-2 text-[#4B352A] focus:outline-[#688ed4] rounded-full ' type="text" placeholder='Enter link of your pic' />
-                            <input value={desc || ""} onChange={e => setdesc(e.target.value)} className='my-2  mx-2 px-4 bg-white py-2 text-[#4B352A] focus:outline-[#688ed4] rounded-full ' type="text" placeholder='Enter Your description' />
-                            <button disabled={links[0].link == "" || pic == "" || handle == "" || links[0].linktext == ""} onClick={() => { submitlink() }} className='py-2 my-5 disabled:bg-slate-500 w-fit px-5 mx-2 rounded-full bg-slate-900 text-white font-bold  '>{!isloading ?  "Create your Bitlink"  : "Loading..." } </button>
                         </div>
-
+                        <div className="item flex flex-col">
+                            <h2 className='font-semibold text-2xl'>Step 2: Add Picture and Description</h2>
+                            <div className="ml-20 flex flex-col">
+                                <input value={pic || ""} onChange={e => setpic(e.target.value)} className='my-2 px-4 bg-white py-2 text-[#4B352A] focus:outline-[#688ed4] rounded-lg ' type="text" placeholder='Enter link of your pic' />
+                                <input value={desc || ""} onChange={e => setdesc(e.target.value)} className='my-2   px-4 bg-white py-2 text-[#4B352A] focus:outline-[#688ed4] rounded-lg ' type="text" placeholder='Enter Your description' />
+                            </div>
+                        </div>
                     </div>
-
+                    <hr className='  bg-white' />
+                    <div className=' w-1/2 flex flex-col gap-3 m-3 p-3'>
+                            <h2 className='font-semibold text-2xl mb-2'>Step 3: Add your Links</h2>
+                        <div className="item flex flex-col overflow-y-scroll h-45 rounded-lg p-2">
+                            {links.map((item, index) => (
+                                <div key={index} className="flex mx-2">
+                                    <input
+                                        value={item.linktext}
+                                        onChange={e => handlechange(index, item.link, e.target.value)}
+                                        className='my-2 mx-2 px-4 bg-white text-[#4B352A] py-2 focus:outline-[#688ed4] rounded-lg w-1/2'
+                                        type="text"
+                                        placeholder='Enter Platform name'
+                                    />
+                                    <input
+                                        value={item.link}
+                                        onChange={e => handlechange(index, e.target.value, item.linktext)}
+                                        className='my-2 mx-2 px-4 bg-white text-[#4B352A] py-2 focus:outline-[#688ed4] rounded-lg w-1/2'
+                                        type="text"
+                                        placeholder='Enter link'
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                        <button onClick={addLink} className='py-2 px-5  rounded-full bg-slate-900 w-1/3 justify-center  text-white font-bold'>
+                            +Add Link
+                        </button>
+                    </div>
 
                 </div>
+                <button disabled={links[0].link == "" || pic == "" || handle == "" || links[0].linktext == ""} onClick={() => { submitlink() }} className='py-2 mt-10 my-5 disabled:bg-slate-500 w-fit px-5 mx-2 rounded-full bg-slate-900 text-white font-bold  '>{!isloading ? "Create your Bitlink" : "Loading..."} </button>
             </div>
-
-            <div className='col2 flex items-center h-screen bg-[#4B352A]'>
-                <img className=' object-contain border-2 ' width={700} src="https://linktr.ee/og/image/handlemusic.jpg" alt="" />
-            </div>
-
         </div>
     </>
     )

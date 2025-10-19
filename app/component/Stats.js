@@ -27,7 +27,7 @@ const Stats = async () => {
     const fetchUser = await collection.find({}).sort({ visits: -1 }).limit(5).toArray();
 
     return (
-      <div className="bg-[#F0F2BD] grid grid-cols-2 items-center min-h-screen">
+      <div className="bg-[#F0F2BD]  grid grid-cols-2 items-center min-h-screen">
         <div className="boxes mt-10 flex-col flex justify-center items-center gap-5 ml-[10vw]">
           <div className="box bg-[#B2CD9C] border p-4 rounded-lg text-center mx-10">
             <p className="font-bold">👤 Registered Users: {count}</p>
