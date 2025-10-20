@@ -16,7 +16,7 @@ const Navbar = () => {
     }
     
  
-    return (<> {showNavbar && <nav className='bg-white justify-between w-[80vw] flex fixed  top-10 right-[10vw] rounded-full px-7 py-5'>
+    return (<> {showNavbar && <nav className='bg-white justify-between w-[80vw] flex fixed  top-10 right-[10vw] rounded-full px-7 py-3'>
         <div className="logo flex gap-8  items-center">
             <Link href={"/"}><img className='h-6 object-contain' src="/logooo.png" alt="" />
             </Link>
