@@ -1,6 +1,6 @@
-# 🌐 BitLinks
+# 🌐 BitTree
 
-BitLinks is a simple and customizable **Linktree alternative** built with **Next.js**.  
+BitTree is a simple and customizable **Linktree alternative** built with **Next.js**.  
 Create a single bio link to showcase all your important links — social profiles, portfolios, projects, and more — beautifully and efficiently.
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=nextdotjs)
@@ -36,10 +36,10 @@ Clone this repository and run the development server:
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/bitlinks.git
+git clone https://github.com/yourusername/bitTree.git
 
 # Navigate to the project
-cd bitlinks
+cd bitTree
 
 # Install dependencies
 npm install
@@ -55,7 +55,7 @@ Open http://localhost:3000 in your browser to view the app.
 ## 🧩 Project Structure
 
 ```bash
-bitlinks/
+bitTree/
 ├── app/
 │   ├── page.js        # Main page
 │   ├── layout.js      # Root layout
@@ -77,11 +77,11 @@ MONGODB_URI=mongodb://example.com
 
 ## 🧑‍💻 Author
 
-BitLinks is developed and maintained by Ansh kathil
+BitTree is developed and maintained by Ansh kathil
 .
 Feel free to ⭐ the repo if you find it useful!
 
-“One link to rule them all — BitLinks 💫”
+“One link to rule them all — BitTree 💫”
 ---
 
 

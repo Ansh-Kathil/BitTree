@@ -1,7 +1,7 @@
 ## 🤝 Contributing
 
 Contributions are always welcome! 🎉  
-If you’d like to help improve **BitLinks**, follow these simple steps:
+If you’d like to help improve **BitTree**, follow these simple steps:
 
 ## Create an issue 
 Open an issue to discuss your idea, feature request, or bug fix with the maintainers.
@@ -15,12 +15,12 @@ Go to the Issues tab
 
 2. **Clone your forked repository**  
    ```bash
-   git clone https://github.com/<your-username>/bitlinks.git
+   git clone https://github.com/<your-username>/bitTree.git
    ```
 3. **Replace <your-username> with your GitHub username**
    Navigate to the project directory
    ```
-   cd bitlinks
+   cd bitTree
    ```
 4. **Create a new branch**
    Use a descriptive name for your branch:
