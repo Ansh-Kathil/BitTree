@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Github } from 'lucide-react';
+import Link from "next/link";
 
 export default function Home() {
 
@@ -27,6 +29,9 @@ export default function Home() {
         <div className=" flex items-center flex-col justify-end mr-[10vw]">
               <img width={650} src="https://clipart-library.com/images_k/fall-tree-transparent/fall-tree-transparent-17.png" alt="" />
         </div>
+        <Link target="_blank" href={"https://github.com/Ansh-Kathil/BitTree"} className="absolute bottom-5 right-10  bg-slate-800 p-2 cursor-pointer rounded-md ">
+          <Github className="invert"/>
+        </Link>
 
       </section>
     </main>
