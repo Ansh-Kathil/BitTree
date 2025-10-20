@@ -148,7 +148,7 @@ const Generate = () => {
                     </div>
 
                 </div>
-                <button disabled={ links.some(link => link.link === "" || link.linktext === "") || pic == "" || handle == "" } onClick={() => { submitlink() }} className='py-2 select-none mt-10 my-5 disabled:bg-slate-500 w-[190px] px-5 mx-2 rounded-full bg-slate-900 text-white font-bold  '>{!isloading ? "Create your Bitlink" : "Loading..."} </button>
+                <button disabled={ links.some(link => link.link === "" || link.linktext === "") || pic == "" || handle == "" } onClick={() => { submitlink() }} className='py-2 select-none mt-10 my-5 disabled:bg-slate-500 w-[190px] px-5 mx-2 rounded-full bg-slate-900 text-white font-bold  '>{!isloading ? "Create your BitTree" : "Loading..."} </button>
             </div>
         </div>
     </>
