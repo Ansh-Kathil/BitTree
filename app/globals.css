@@ -45,3 +45,8 @@
   scrollbar-color: #475569 #e5e7eb;
 }
 
+/* Make all buttons show hand cursor on hover */
+button {
+  cursor: pointer;
+}
+
